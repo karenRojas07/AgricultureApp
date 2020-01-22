@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-
+//HOAL
 public class JBtnImage extends JButton{
 
 	private static final long serialVersionUID = 1L;
