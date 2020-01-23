@@ -34,8 +34,4 @@ public class MyFrame extends JFrame{
 		jScrollPane.setViewportView(myPanel);
 		this.add(jScrollPane, BorderLayout.CENTER);
 	}
-
-	public static void main(String[] args) {
-		new MyFrame();
-	}
 }
