@@ -17,6 +17,7 @@ public class PanelNorth extends JPanel{
 	
 	public void init() {
 		logo = new JButton();
+		logo.setText("Aqui Va El Logo");
 	}
 	
 }
