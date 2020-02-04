@@ -1,11 +1,11 @@
 package runner;
 
-import view.MyFrame;
+import viewTest.PrinFrame;
 
 public class Run {
 	
 	public static void main(String[] args) {
-		new MyFrame();
+		new PrinFrame();
 	}
 
 }
