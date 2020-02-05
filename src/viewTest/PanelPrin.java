@@ -40,6 +40,10 @@ public class PanelPrin extends JPanel{
 		add(table, BorderLayout.CENTER);
 	}
 	
+	public void addElementToTable(Object [] obj) {
+		table.addElementToTable(obj);
+	}
+	
 	public void changeLanguage() {
 		panelL.changeLanguge();
 		menu.changeLanguage();

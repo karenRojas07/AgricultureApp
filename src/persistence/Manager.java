@@ -1,4 +1,4 @@
-package models;
+package persistence;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,20 +11,19 @@ import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.URL;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
+
 import org.json.simple.DeserializationException;
 import org.json.simple.JsonArray;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
 
+import models.CropManager;
+
 public class Manager {
 
-	private ArrayList<Crop> cropList;
 
 	public Manager() throws DeserializationException, IOException {
-		cropList = new ArrayList<Crop>();
 		readCrop();
-		System.out.println(cropList);
 	}
 
 	public static InputStream getHttpURLConnection(boolean isProxy, String filePath) {
@@ -60,22 +59,28 @@ public class Manager {
 		return inputStream;
 	}
 
-	private void addCrop(Crop crop) {
-		cropList.add(crop);
-	}
 
 	private void readCrop() throws DeserializationException, IOException {
-		BufferedReader buffer = new BufferedReader(new InputStreamReader(getHttpURLConnection(true, "https://www.datos.gov.co/resource/qi54-achv.json")));
-		JsonObject jsonObjectToArray = new JsonObject();
-		JsonArray jsonObjectCrop = (JsonArray) Jsoner.deserialize(buffer);
-		for (Object list : jsonObjectCrop) {
-			jsonObjectToArray = (JsonObject) list;
-			addCrop(new Crop(jsonObjectToArray.getString("departamento"), jsonObjectToArray.getString("codigo_dane"),jsonObjectToArray.getString("municipio"),jsonObjectToArray.getString("cultivo"), jsonObjectToArray.getString("a_o"),
-					jsonObjectToArray.getString("rea_sembrada_ha"),jsonObjectToArray.getString("rea_cosechada_ha"), jsonObjectToArray.getString("estado_fisico_produccion"),jsonObjectToArray.getString("ciclo_de_cultivo")));
+		String crop;
+		String harvestedArea;
+		String tons;
+		String plantedArea;
+		String stateProd;
+		String priceProd;
+		String costs;
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(getHttpURLConnection(true, "https://www.datos.gov.co/resource/b9ix-pnhg.json")));
+		JsonArray jsonCrops = (JsonArray) Jsoner.deserialize(buffer);
+		for (int i = 0; i < jsonCrops.size(); i++) {
+			JsonObject jsonCrop = (JsonObject) jsonCrops.get(i);
+			crop = jsonCrop.getString("cultivos");
+			harvestedArea = jsonCrop.getString("consolidado_evaluacion_ano_2013_area_cosech_ha");
+			plantedArea = jsonCrop.getString("consolidado_evaluacion_ano_2013_area_sembr_ha");
+			tons = jsonCrop.getString("consolidado_evaluacion_ano_2013_esperad_ton");
+			stateProd = jsonCrop.getString("consolidado_evaluacion_ano_2013_del_produc");
+			priceProd = jsonCrop.getString("consolidado_evaluacion_ano_2013_estado_precio_al_producr_ton");
+			costs = jsonCrop.getString("consolidado_evaluacion_ano_2013_costos_de_produc_ha");
+			CropManager.createCropTr(crop, harvestedArea, plantedArea, tons, stateProd, priceProd, costs);
 		}
-	}
-	
-	public static void main(String[] args) throws DeserializationException, IOException {
-		new Manager();
+		
 	}
 }

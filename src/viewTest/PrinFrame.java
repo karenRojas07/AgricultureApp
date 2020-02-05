@@ -37,4 +37,8 @@ public class PrinFrame extends JFrame{
 		setTitle(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.APP_NAME));
 		panel.changeLanguage();
 	}
+	
+	public void addElementToTable(Object [] obj) {
+		panel.addElementToTable(obj);
+	}
 }

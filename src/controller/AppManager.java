@@ -2,10 +2,16 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
+import org.json.simple.DeserializationException;
+
 import general.HandlerLanguage;
+import models.CropManager;
+import models.CropTransitory;
+import persistence.Manager;
 import viewTest.PrinFrame;
 
 public class AppManager implements ActionListener{
@@ -14,10 +20,22 @@ public class AppManager implements ActionListener{
 	private HandlerLanguage config = null;
 	private String languageDefault;
 	public PrinFrame frame;
+	public CropManager cropM;
+	public Manager fileM;
 	
-	public AppManager() {
+	public AppManager() throws DeserializationException, IOException {
 		loadConfiguration();
+		cropM = new CropManager();
+		fileM = new Manager();
 		frame = new PrinFrame(this);
+		addElementsToTable();
+	}
+	
+	public void addElementsToTable() {
+		for (int i = 0; i < cropM.getListCropTr().size(); i++) {
+			CropTransitory crop = cropM.getListCropTr().get(i);
+			frame.addElementToTable(crop.toObjectVector());
+		}
 	}
 	
 	public String getLanguageDefault(){

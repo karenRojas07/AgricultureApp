@@ -32,7 +32,13 @@ public class PanelTable extends JPanel{
 		setBackground(Color.WHITE);
 		setFocusable(false);
 		
-		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.NAME_PROD), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP)};
+		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.HARV_AREA),
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PLANT_AREA), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.COSTS), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TONS)};
 		dtmElements = new DefaultTableModel();
 		dtmElements.setColumnIdentifiers( headers );
 
@@ -63,7 +69,13 @@ public class PanelTable extends JPanel{
 	}
 
 	public void changeLanguage() {
-		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.NAME_PROD), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP)};
+		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.HARV_AREA),
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PLANT_AREA), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.COSTS), 
+				HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TONS)};
 		dtmElements.setColumnIdentifiers( headers );
 	}
 }
