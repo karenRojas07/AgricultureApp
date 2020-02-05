@@ -11,6 +11,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import constants.ConstantsLanguage;
+import general.HandlerLanguage;
+
 public class PanelTable extends JPanel{
 	
 	
@@ -29,7 +32,7 @@ public class PanelTable extends JPanel{
 		setBackground(Color.WHITE);
 		setFocusable(false);
 		
-		String[] headers = {"Nombre", "Tipo Alimento", "Precio(Kg)", "Cultivo"};
+		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.NAME_PROD), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP)};
 		dtmElements = new DefaultTableModel();
 		dtmElements.setColumnIdentifiers( headers );
 
@@ -59,4 +62,8 @@ public class PanelTable extends JPanel{
 		dtmElements.addRow(vector);
 	}
 
+	public void changeLanguage() {
+		String[] headers = {HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.NAME_PROD), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.TYPE_AL), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.PRICE), HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CROP)};
+		dtmElements.setColumnIdentifiers( headers );
+	}
 }

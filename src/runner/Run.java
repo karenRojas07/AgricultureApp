@@ -1,11 +1,11 @@
 package runner;
 
-import viewTest.PrinFrame;
+import controller.AppManager;
 
 public class Run {
 	
 	public static void main(String[] args) {
-		new PrinFrame();
+		new AppManager();
 	}
 
 }

@@ -2,7 +2,7 @@ package viewTest;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
@@ -17,14 +17,14 @@ public class PanelPrin extends JPanel{
 	private PanelTable table;
 	private JPanel panelNorth;
 	
-	public PanelPrin() {
+	public PanelPrin(ActionListener acl) {
 		setLayout(new BorderLayout());
-		init();
+		init(acl);
 	}
 	
-	public void init() {
+	public void init(ActionListener acl) {
 		panelNorth = new JPanel();
-		panelL = new PanelNorth();
+		panelL = new PanelNorth(acl);
 		menu = new MenuBar();
 		table = new PanelTable();
 		config();
@@ -38,7 +38,12 @@ public class PanelPrin extends JPanel{
 		panelNorth.add(menu, BorderLayout.CENTER);
 		add(panelNorth, BorderLayout.NORTH);
 		add(table, BorderLayout.CENTER);
-		
+	}
+	
+	public void changeLanguage() {
+		panelL.changeLanguge();
+		menu.changeLanguage();
+		table.changeLanguage();
 	}
 
 }

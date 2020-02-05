@@ -7,6 +7,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import constants.ConstantsLanguage;
+import general.HandlerLanguage;
+
 public class MenuBar extends JPanel{
 	
 	/**
@@ -36,7 +39,7 @@ public class MenuBar extends JPanel{
 		home.setForeground(Color.WHITE);
 //		home.setBorderPainted(false);
 		home.setFocusable(false);
-		home.setText("Inicio");
+		home.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.HOME));
 		add(home);
 		
 		signin.setBackground(new Color(203, 229, 88));
@@ -45,7 +48,7 @@ public class MenuBar extends JPanel{
 		signin.setForeground(Color.WHITE);
 //		singin.setBorderPainted(false);
 		signin.setFocusable(false);
-		signin.setText("Registrarse");
+		signin.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.SIGN_UP));
 		add(signin);
 		
 		login.setBackground(new Color(203, 229, 88));
@@ -54,8 +57,14 @@ public class MenuBar extends JPanel{
 		login.setForeground(Color.WHITE);
 //		login.setBorderPainted(false);
 		login.setFocusable(false);
-		login.setText("Ingresar");
+		login.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LOGIN));
 		add(login);
+	}
+	
+	public void changeLanguage() {
+		home.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.HOME));
+		signin.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.SIGN_UP));
+		login.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LOGIN));
 	}
 
 }

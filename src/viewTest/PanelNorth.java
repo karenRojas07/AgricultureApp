@@ -2,11 +2,16 @@ package viewTest;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import constants.ConstantsLanguage;
+import controller.Command;
+import general.HandlerLanguage;
 
 public class PanelNorth extends JPanel{
 
@@ -19,20 +24,20 @@ public class PanelNorth extends JPanel{
 	public JButton english;
 	public JPanel panelLogo;
 
-	public PanelNorth() {
+	public PanelNorth(ActionListener acl) {
 		setBackground(Color.WHITE);
-		init();
+		init(acl);
 	}
 	
-	public void init() {
+	public void init(ActionListener acl) {
 		logo = new JButton();
 		spanish = new JButton();
 		english = new JButton();
 		panelLogo = new JPanel();
-		config();
+		config(acl);
 	}
 	
-	public void config() {
+	public void config(ActionListener acl) {
 		panelLogo.setLayout(new BorderLayout());
 		panelLogo.setBackground(Color.WHITE);
 		panelLogo.setBorder(BorderFactory.createEmptyBorder(20, 5, 20, 400));
@@ -48,7 +53,9 @@ public class PanelNorth extends JPanel{
 		spanish.setForeground(Color.WHITE);
 		spanish.setBorderPainted(false);
 		spanish.setFocusable(false);
-		spanish.setText("Español");
+		spanish.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LANG_ES));
+		spanish.setActionCommand(Command.LANGUAGE_ES.name());
+		spanish.addActionListener(acl);
 		add(spanish);
 		
 		
@@ -56,7 +63,14 @@ public class PanelNorth extends JPanel{
 		english.setForeground(Color.WHITE);
 		english.setBorderPainted(false);
 		english.setFocusable(false);
-		english.setText("Inglés");
+		english.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LANG_US));
+		english.addActionListener(acl);
+		english.setActionCommand(Command.LANGUAGE_ENG.name());
 		add(english);
+	}
+	
+	public void changeLanguge() {
+		spanish.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LANG_ES));
+		english.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.LANG_US));
 	}
 }
