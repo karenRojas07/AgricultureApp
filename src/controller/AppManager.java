@@ -2,7 +2,6 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 
@@ -20,22 +19,23 @@ public class AppManager implements ActionListener{
 	private HandlerLanguage config = null;
 	private String languageDefault;
 	public PrinFrame frame;
-	public CropManager cropM;
 	public Manager fileM;
 	
 	public AppManager() throws DeserializationException, IOException {
 		loadConfiguration();
-		cropM = new CropManager();
 		fileM = new Manager();
 		frame = new PrinFrame(this);
-		addElementsToTable();
 	}
 	
 	public void addElementsToTable() {
-		for (int i = 0; i < cropM.getListCropTr().size(); i++) {
-			CropTransitory crop = cropM.getListCropTr().get(i);
+		for (int i = 0; i < CropManager.getListCropTr().size(); i++) {
+			CropTransitory crop = CropManager.getListCropTr().get(i);
 			frame.addElementToTable(crop.toObjectVector());
 		}
+	}
+	
+	public void changePanelT() {
+		frame.changePanelT();
 	}
 	
 	public String getLanguageDefault(){
@@ -118,6 +118,10 @@ public class AppManager implements ActionListener{
 			break;
 		case LANGUAGE_ENG:
 			manageChangeLanguageUS();
+			break;
+		case DATES:
+			changePanelT();
+			addElementsToTable();
 			break;
 		default:
 			break;

@@ -12,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import constants.ConstantsLanguage;
+import constants.ConstantsView;
 import general.HandlerLanguage;
 
 public class PanelTable extends JPanel{
@@ -42,14 +43,12 @@ public class PanelTable extends JPanel{
 		dtmElements = new DefaultTableModel();
 		dtmElements.setColumnIdentifiers( headers );
 
-		Font fontHeader = new Font("Bauhaus 93", Font.PLAIN, 17);
-
 		jtElements = new JTable();
 		jtElements.setModel(dtmElements);
 		jtElements.getTableHeader().setReorderingAllowed(false);
 		jtElements.getTableHeader().setBackground(Color.WHITE);
 		jtElements.getTableHeader().setForeground(Color.BLACK);
-		jtElements.getTableHeader().setFont(fontHeader);
+		jtElements.getTableHeader().setFont(ConstantsView.BAUHAUS_17);
 		jtElements.setBackground(Color.WHITE);
 		jtElements.setFillsViewportHeight(true);
 		jtElements.setBorder(null);

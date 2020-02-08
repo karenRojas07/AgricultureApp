@@ -32,6 +32,13 @@ public class PrinFrame extends JFrame{
 		scroll = new JScrollPane(panel);
 		add(scroll);
 	}
+	
+	public void changePanelT() {
+		panel.changePanelT();
+		this.pack();
+		setSize(1600, 1400);
+		
+	}
 
 	public void changeLanguage() {
 		setTitle(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.APP_NAME));

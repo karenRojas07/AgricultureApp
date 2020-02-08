@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CropManager {
 	
-	public static ArrayList<CropTransitory> listCropTr;
+	public static ArrayList<CropTransitory> listCropTr = new ArrayList<CropTransitory>();
 
 	public CropManager() {
 		listCropTr = new ArrayList<CropTransitory>();

@@ -13,8 +13,9 @@ public class ConstantsLanguage {
 	
 	
 	public static final String HOME = "Home";
-	public static final String DATE = "Date";
+	public static final String DATA = "Data";
 	public static final String REPORTS = "Reports";
+	public static final String GEST_DT = "Gest_dt";
 	
 	//Table
 	public static final String HARV_AREA = "Harvested_area";
@@ -24,4 +25,8 @@ public class ConstantsLanguage {
 	public static final String PLANT_AREA = "Planted_area";
 	public static final String TONS = "Tons";
 	public static final String COSTS = "Costs";
+	
+	//Footer
+	public static final String CONTACT = "Contact";
+	public static final String CONTACT_INFO = "Contact_info";
 }
