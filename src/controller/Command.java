@@ -2,6 +2,6 @@ package controller;
 
 public enum Command {
 	
-	LANGUAGE_ES, LANGUAGE_ENG, DATES;
+	LANGUAGE_ES, LANGUAGE_ENG, DATA, MANAGE_DATA;
 
 }

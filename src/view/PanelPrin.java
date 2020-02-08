@@ -1,8 +1,7 @@
-package viewTest;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Panel;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
@@ -19,6 +18,7 @@ public class PanelPrin extends JPanel{
 	private JPanel panelNorth;
 	private JPanel aux;
 	private PanelFooter panelF;
+	private PanelAdmData panelAdmData;
 	
 	public PanelPrin(ActionListener acl) {
 		setLayout(new BorderLayout());
@@ -31,7 +31,8 @@ public class PanelPrin extends JPanel{
 		menu = new MenuBar(acl);
 		table = new PanelTable();
 		aux = new JPanel();
-		panelF = new PanelFooter();
+		panelF = new PanelFooter(acl);
+		panelAdmData = new PanelAdmData();
 		config();
 	}
 	
@@ -49,7 +50,12 @@ public class PanelPrin extends JPanel{
 		this.remove(aux);
 		aux = table;
 		add(aux, BorderLayout.CENTER);
-		this.repaint();
+	}
+	
+	public void changePanelAdm() {
+		this.remove(aux);
+		aux = panelAdmData;
+		add(panelAdmData, BorderLayout.CENTER);
 	}
 	
 	public void addElementToTable(Object [] obj) {
@@ -61,6 +67,7 @@ public class PanelPrin extends JPanel{
 		menu.changeLanguage();
 		table.changeLanguage();
 		panelF.changeLanguage();
+		panelAdmData.changeLanguage();
 	}
 
 }

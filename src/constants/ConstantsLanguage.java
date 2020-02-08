@@ -10,7 +10,9 @@ public class ConstantsLanguage {
 	public static final String LOGIN = "Login";
 	
 	
-	
+	public static final String ADD_CROP = "Add_crop";
+	public static final String DEL_CROP = "Del_crop";
+	public static final String EDIT_CROP = "Edit_crop";
 	
 	public static final String HOME = "Home";
 	public static final String DATA = "Data";
@@ -28,5 +30,11 @@ public class ConstantsLanguage {
 	
 	//Footer
 	public static final String CONTACT = "Contact";
+	public static final String PRIVACY = "Privacy";
+	public static final String WHO = "Who";
+	public static final String ABOUT = "About";
+	public static final String HELP = "Help";
+	public static final String POLICIES = "Policies";
 	public static final String CONTACT_INFO = "Contact_info";
+	public static final String COPYRIGHT = "Copyright";
 }

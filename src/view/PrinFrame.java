@@ -1,4 +1,4 @@
-package viewTest;
+package view;
 
 import java.awt.event.ActionListener;
 
@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
 import constants.ConstantsLanguage;
+import constants.ConstantsView;
 import general.HandlerLanguage;
 
 public class PrinFrame extends JFrame{
@@ -19,7 +20,7 @@ public class PrinFrame extends JFrame{
 	private JScrollPane scroll;
 	
 	public PrinFrame(ActionListener acl) {
-		setIconImage(new ImageIcon("images/logoP.png").getImage());
+		setIconImage(new ImageIcon(ConstantsView.LOGO_APP).getImage());
 		setTitle(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.APP_NAME));
 		setExtendedState(MAXIMIZED_BOTH);
 		init(acl);
@@ -30,14 +31,20 @@ public class PrinFrame extends JFrame{
 	public void init(ActionListener acl) {
 		panel = new PanelPrin(acl);
 		scroll = new JScrollPane(panel);
+		scroll.setFocusable(false);
 		add(scroll);
 	}
 	
 	public void changePanelT() {
 		panel.changePanelT();
 		this.pack();
-		setSize(1600, 1400);
-		
+		setExtendedState(MAXIMIZED_BOTH);
+	}
+	
+	public void changePanelAdm() {
+		panel.changePanelAdm();
+		this.pack();
+		setExtendedState(MAXIMIZED_BOTH);
 	}
 
 	public void changeLanguage() {

@@ -1,4 +1,4 @@
-package viewTest;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 import constants.ConstantsLanguage;
 import constants.ConstantsView;
@@ -25,7 +26,7 @@ public class ContactFooter extends JPanel{
 	public ContactFooter() {
 		setLayout(new BorderLayout());
 		setBackground(ConstantsView.GREEN_FOOTER);
-		setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
+		setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 300));
 		init();
 	}
 	
@@ -36,11 +37,12 @@ public class ContactFooter extends JPanel{
 	}
 	
 	public void config() {
+		contact.setHorizontalAlignment(SwingConstants.LEFT);
 		contact.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CONTACT));
 		contact.setIcon(new ImageIcon(ConstantsView.CONTACT));
 		contact.setForeground(Color.WHITE);
 		contact.setFont(ConstantsView.BAUHAUS_17);
-		contact.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 20));
+		contact.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 20));
 		add(contact, BorderLayout.NORTH);
 		
 		info.setBackground(ConstantsView.GREEN_FOOTER);

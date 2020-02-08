@@ -11,7 +11,7 @@ import general.HandlerLanguage;
 import models.CropManager;
 import models.CropTransitory;
 import persistence.Manager;
-import viewTest.PrinFrame;
+import view.PrinFrame;
 
 public class AppManager implements ActionListener{
 	
@@ -36,6 +36,10 @@ public class AppManager implements ActionListener{
 	
 	public void changePanelT() {
 		frame.changePanelT();
+	}
+	
+	public void changePanelAdm() {
+		frame.changePanelAdm();
 	}
 	
 	public String getLanguageDefault(){
@@ -119,9 +123,12 @@ public class AppManager implements ActionListener{
 		case LANGUAGE_ENG:
 			manageChangeLanguageUS();
 			break;
-		case DATES:
+		case DATA:
 			changePanelT();
 			addElementsToTable();
+			break;
+		case MANAGE_DATA:
+			changePanelAdm();
 			break;
 		default:
 			break;
