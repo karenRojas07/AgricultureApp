@@ -35,7 +35,7 @@ public class ConfigButton extends JButton{
 		setBackground(color);
 		setFocusable(false);
 		setForeground(colorTxt);
-//		setOpaque(true);
+		setBorderPainted(true);
 		setBorder(null);
 		setForeground(Color.BLACK);
 	}
