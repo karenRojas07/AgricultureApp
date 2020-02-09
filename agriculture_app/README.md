@@ -1,3 +1,0 @@
-# AgricultureApp
-
-Primer Commit
