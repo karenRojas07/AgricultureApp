@@ -40,7 +40,7 @@ public class PrivacyFooter extends JPanel{
 		privacyUs.setHorizontalAlignment(SwingConstants.LEFT);
 		privacyUs.setIcon(new ImageIcon(ConstantsView.POLICIES));
 		privacyUs.setForeground(Color.WHITE);
-		privacyUs.setFont(ConstantsView.BAUHAUS_17);
+		privacyUs.setFont(ConstantsView.BAUHAUS_17_PLAIN);
 		privacyUs.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.POLICIES));
 		privacyUs.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 50));
 		

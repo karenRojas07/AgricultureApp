@@ -40,15 +40,15 @@ public class PanelAdmData extends JPanel{
 	}
 	
 	public void config(ActionListener control) {
-		addCrop.buttonTextIcon(ConstantsView.ADD, ConstantsLanguage.CREATE_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
+		addCrop.buttonTextIcon(ConstantsView.ADD, ConstantsLanguage.CREATE_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17_PLAIN, Color.GRAY);
 		addCrop.setActionCommand(""+Command.ADD_CROOP);
 		addCrop.addActionListener(control);
 		addCrop.setBorder(new RoundBorder(10));
 		
-		delCrop.buttonTextIcon(ConstantsView.DELETE, ConstantsLanguage.DEL_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
+		delCrop.buttonTextIcon(ConstantsView.DELETE, ConstantsLanguage.DEL_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17_PLAIN, Color.GRAY);
 		delCrop.setBorder(new RoundBorder(10));
 		
-		editCrop.buttonTextIcon(ConstantsView.MODIFY, ConstantsLanguage.EDIT_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
+		editCrop.buttonTextIcon(ConstantsView.MODIFY, ConstantsLanguage.EDIT_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17_PLAIN, Color.GRAY);
 		editCrop.setBorder(new RoundBorder(10));
 		
 		gbc.gridx = 0;

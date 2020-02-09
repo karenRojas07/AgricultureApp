@@ -39,7 +39,7 @@ public class ContactFooter extends JPanel{
 		contact.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CONTACT));
 		contact.setIcon(new ImageIcon(ConstantsView.CONTACT));
 		contact.setForeground(Color.WHITE);
-		contact.setFont(ConstantsView.BAUHAUS_17);
+		contact.setFont(ConstantsView.BAUHAUS_17_PLAIN);
 		contact.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 20));
 		add(contact, BorderLayout.NORTH);
 		

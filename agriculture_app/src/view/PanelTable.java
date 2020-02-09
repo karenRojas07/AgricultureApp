@@ -47,16 +47,18 @@ public class PanelTable extends JPanel{
 		jtElements.getTableHeader().setReorderingAllowed(false);
 		jtElements.getTableHeader().setBackground(Color.WHITE);
 		jtElements.getTableHeader().setForeground(Color.BLACK);
-		jtElements.getTableHeader().setFont(ConstantsView.BAUHAUS_17);
+		jtElements.getTableHeader().setFont(ConstantsView.BAUHAUS_17_PLAIN);
 		jtElements.setBackground(Color.WHITE);
 		jtElements.setFillsViewportHeight(true);
 		jtElements.setBorder(null);
-		jtElements.setEnabled(false);
+		jtElements.setRowHeight(40);
+		jtElements.setEnabled(true);
 
 		jsTable = new JScrollPane(jtElements);
+		jsTable.setFont(ConstantsView.BAUHAUS_17);
 		jsTable.setForeground(Color.BLACK);
 		jsTable.setBorder(null);
-		jsTable.setAlignmentX(Component.LEFT_ALIGNMENT);
+		jsTable.setAlignmentX(Component.CENTER_ALIGNMENT);
 		this.add(jsTable, BorderLayout.PAGE_END);
 		this.setBorder(null);
 		

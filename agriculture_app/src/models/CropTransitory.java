@@ -82,6 +82,14 @@ public class CropTransitory {
 		this.costs = costs;
 	}
 	
-	
+	public String toString() {
+	return "nombre cultivo" +  crop + "\n" + 
+			"tipo cultivo" +  stateProd + "\n" +
+			"precio" +  priceProd + "\n" +
+			"area cosecha" +  harvestedArea + "\n" +
+			"area siembra" +  plantedArea + "\n" +
+			"costo" +  costs + "\n" +
+			"toneladas" +  tons + "\n" ;
+	}
 
 }
