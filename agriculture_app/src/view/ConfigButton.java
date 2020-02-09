@@ -30,10 +30,12 @@ public class ConfigButton extends JButton{
 		if(!path.equals(ConstantsView.NULL)) setIcon(new ImageIcon(path));
 	}
 
-	public void txt(String texto) {
+	public void txt(String texto, Color color, Color colorTxt) {
 		setText(texto);
-		setBackground(Color.RED);
+		setBackground(color);
 		setFocusable(false);
+		setForeground(colorTxt);
+//		setOpaque(true);
 		setBorder(null);
 		setForeground(Color.BLACK);
 	}

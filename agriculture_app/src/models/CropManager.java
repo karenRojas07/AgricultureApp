@@ -21,12 +21,4 @@ public class CropManager {
 	public void setListCropTr(ArrayList<CropTransitory> listCropTr) {
 		CropManager.listCropTr = listCropTr;
 	}
-
-	//	private void calculateFiveHigherPrices() {
-	//		int 
-	//	for (int i = 0; i < listCropTr.size(); i++) {
-	//		if (listCropTr.get(i).getPriceProd().equalsIgnoreCase("")) {
-	//			
-	//		}
-	//	}
 }

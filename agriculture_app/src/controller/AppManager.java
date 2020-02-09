@@ -25,7 +25,7 @@ public class AppManager implements ActionListener{
 	public AppManager() throws DeserializationException, IOException {
 		loadConfiguration();
 		fileM = new Manager();
-		frame = new PrinFrame(this);
+		frame = new PrinFrame(this);		
 	}
 
 	public void addElementsToTable() {
