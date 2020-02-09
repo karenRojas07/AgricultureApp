@@ -4,12 +4,14 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 import constants.ConstantsLanguage;
 import constants.ConstantsView;
+import controller.Command;
 import general.HandlerLanguage;
 
 public class PanelAdmData extends JPanel{
@@ -20,13 +22,13 @@ public class PanelAdmData extends JPanel{
 	public ConfigButton delCrop;
 	private GridBagLayout gbl;
 	private GridBagConstraints gbc;
-
-	public PanelAdmData() {
+	
+	public PanelAdmData(ActionListener control) {
 		setBackground(Color.WHITE);
 		init();
 		setLayout(gbl);
 		setBorder(BorderFactory.createEmptyBorder(40, 450, 40, 450));
-		config();
+		config(control);
 	}
 	
 	public void init() {
@@ -37,11 +39,15 @@ public class PanelAdmData extends JPanel{
 		gbc = new GridBagConstraints();
 	}
 	
-	public void config() {
-		addCrop.buttonTextIcon(ConstantsView.ADD, ConstantsLanguage.ADD_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
+	public void config(ActionListener control) {
+		addCrop.buttonTextIcon(ConstantsView.ADD, ConstantsLanguage.CREATE_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
+		addCrop.setActionCommand(""+Command.ADD_CROOP);
+		addCrop.addActionListener(control);
 		addCrop.setBorder(new RoundBorder(10));
+		
 		delCrop.buttonTextIcon(ConstantsView.DELETE, ConstantsLanguage.DEL_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
 		delCrop.setBorder(new RoundBorder(10));
+		
 		editCrop.buttonTextIcon(ConstantsView.MODIFY, ConstantsLanguage.EDIT_CROP, Color.WHITE, true, ConstantsView.BAUHAUS_17, Color.GRAY);
 		editCrop.setBorder(new RoundBorder(10));
 		
@@ -64,7 +70,7 @@ public class PanelAdmData extends JPanel{
 	}
 	
 	public void changeLanguage() {
-		addCrop.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.ADD_CROP));
+		addCrop.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.CREATE_CROP));
 		delCrop.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.DEL_CROP));
 		editCrop.setText(HandlerLanguage.languageProperties.getProperty(ConstantsLanguage.EDIT_CROP));
 	}

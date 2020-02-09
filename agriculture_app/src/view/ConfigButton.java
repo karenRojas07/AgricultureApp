@@ -10,16 +10,16 @@ import constants.ConstantsView;
 import general.HandlerLanguage;
 
 public class ConfigButton extends JButton{
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public void buttonImage(String path, Color background, boolean borderPainted) {
 		setFocusable(false);
 		setBorderPainted(borderPainted);
 		setBackground(background);
 		setIcon(new ImageIcon(path));
 	}
-	
+
 	public void buttonTextIcon(String path, String text, Color background, boolean borderPainted, Font font, Color foreground) {
 		setFont(font);
 		setBackground(background);
@@ -28,5 +28,13 @@ public class ConfigButton extends JButton{
 		setBorderPainted(borderPainted);
 		setText(HandlerLanguage.languageProperties.getProperty(text));
 		if(!path.equals(ConstantsView.NULL)) setIcon(new ImageIcon(path));
+	}
+
+	public void txt(String texto) {
+		setText(texto);
+		setBackground(Color.RED);
+		setFocusable(false);
+		setBorder(null);
+		setForeground(Color.BLACK);
 	}
 }

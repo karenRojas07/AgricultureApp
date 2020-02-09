@@ -1,26 +1,18 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-
 import constants.ConstantsLanguage;
 import constants.ConstantsView;
 import general.HandlerLanguage;
 
 public class PrivacyFooter extends JPanel{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	public ConfigButton privacy;
 	public JLabel privacyUs;
@@ -28,7 +20,6 @@ public class PrivacyFooter extends JPanel{
 	public ConfigButton about;
 	public ConfigButton help;
 	
-
 	public PrivacyFooter() {
 		setBackground(ConstantsView.GREEN_FOOTER);
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

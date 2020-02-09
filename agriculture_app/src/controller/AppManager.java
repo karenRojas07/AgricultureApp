@@ -11,6 +11,7 @@ import general.HandlerLanguage;
 import models.CropManager;
 import models.CropTransitory;
 import persistence.Manager;
+import view.JDiagAdd;
 import view.PrinFrame;
 
 public class AppManager implements ActionListener{
@@ -18,8 +19,9 @@ public class AppManager implements ActionListener{
 	private static final String NAME_FILE_CONFIG = "config.init";
 	private HandlerLanguage config = null;
 	private String languageDefault;
-	public PrinFrame frame;
-	public Manager fileM;
+	private PrinFrame frame;
+	private JDiagAdd jDialog;
+	private Manager fileM;
 	
 	public AppManager() throws DeserializationException, IOException {
 		loadConfiguration();
@@ -130,6 +132,16 @@ public class AppManager implements ActionListener{
 			break;
 		case HOME:
 			frame = new PrinFrame(this);
+			break;
+		case CREATE_CROOP:
+			CropTransitory crop = new CropTransitory(jDialog.getName(),
+					 jDialog.getTxtCropArea(), jDialog.getTxtPlantingArea(), jDialog.getTxtTons(), jDialog.getJcTypeCroop(), jDialog.getTxtPrice(), jDialog.getTxtCosts());
+			frame.addElementToTable(crop.toObjectVector());
+			jDialog.setVisible(false);
+			break;
+		case ADD_CROOP:
+//			jDialog = new JDiagAdd(this);
+			break;
 		default:
 			break;
 		}
